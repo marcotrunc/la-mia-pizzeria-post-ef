@@ -1,0 +1,38 @@
+﻿@model la_mia_pizzeria_static.Models.Pizza
+@{
+    ViewData["Title"] = "La mia prima  pizzeria";
+    Layout = "~/Views/Shared/_LayoutIndex.cshtml";
+}
+    <form method="post" action="@Url.Action("Store", "Pizza")" enctype="multipart/form-data">
+        @Html.AntiForgeryToken()
+        <section class="container">
+            <div class="row">
+                <div class="col-6" hidden>
+                    <label for="name-pizza" class="form-label">Inserisci nome della pizza</label>
+                    <input asp-for="PhotoPath" >
+			        <span asp-validation-for="PhotoPath" class="text-danger" value="pizza"></span>
+                </div>
+                <div class="col-6">
+                    <label for="name-pizza" class="form-label">Inserisci nome della pizza</label>
+                    <input asp-for="Title" >
+			        <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+                <div class="col-12">
+                    <label for="description-pizza" class="form-label">Inserisci la descrizione della pizza</label>
+                    <input asp-for="Description" >
+			        <span asp-validation-for="Description" class="text-danger"></span> 
+                </div>
+                <div class="col-6">
+                    <label for="price-pizza" class="form-label">Inserisci il prezzo</label>
+                    <input asp-for="Price" >
+			        <span asp-validation-for="Price" class="text-danger"></span>
+                </div>
+                <div class="col-6">
+                    <label for="file-pizza" class="form-label">Inserisci la foto della pizza</label>
+                    <input asp-for="File" >
+                </div>
+                <button type="submit" class="btn btn-danger mt-3">Submit</button>
+            </div>
+        </section>
+    </form>
+

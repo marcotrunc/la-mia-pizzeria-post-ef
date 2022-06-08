@@ -1,0 +1,26 @@
+﻿@using Microsoft.AspNetCore.Html
+@{
+    ViewData["Title"] = "La mia prima  pizzeria";
+    Layout = "~/Views/Shared/_LayoutIndex.cshtml";
+
+    var spPizza = ViewData["Pizza"] as la_mia_pizzeria_static.Models.Pizza;
+}
+
+<section class="col-12"> 
+    <div class="card" style="width: 18rem;">
+      <img src="@Url.Content(spPizza.PhotoPath)" class="card-img-top" alt="@spPizza.Title">
+      <div class="card-body">
+        <h5 class="card-title">@spPizza.Title</h5>
+        <p class="card-text">@spPizza.Description</p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">An item</li>
+        <li class="list-group-item">A second item</li>
+        <li class="list-group-item">A third item</li>
+      </ul>
+      <div class="card-body">
+        <a href="#" class="card-link">Card link</a>
+        <a href="#" class="card-link">Another link</a>
+      </div>
+    </div>
+</section>
